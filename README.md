@@ -11,9 +11,9 @@ You have three total days (including weekends and holidays) to work on this asse
 <h3>Objectives</h3>
 <ul>
 <li>Create a server application with Node, Express, and MongoDB.</li>
-Create a CRUD API using Express and MongoDB.
-Create MongoDB indexes.
-Use MongoDB indexing to make efficient queries.
-Create MongoDB validation rules.
-Use MongoDB validation to ensure data consistency.
+<li>Create a CRUD API using Express and MongoDB.</li>
+<li>Create MongoDB indexes.</li>
+<li>Use MongoDB indexing to make efficient queries.</li>
+<li>Create MongoDB validation rules.</li>
+<li>Use MongoDB validation to ensure data consistency.</li>
 </ul>
