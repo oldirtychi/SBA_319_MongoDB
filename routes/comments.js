@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
     });
 
     try {
-        const newComment = await.comment.save();
+        const newComment = await comment.save();
         res.status(201).json(newComment);
     } catch (err) {
         res.status(400).json({ message: err.message });

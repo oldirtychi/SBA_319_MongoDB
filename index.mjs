@@ -1,22 +1,20 @@
 import express from "express";
-import dotenv from "dotenv";
-dotenv.config();
+import bodyParser from 'body-parser';
+import connectDB from './db/conn.mjs';
+import userRoutes from './routes/users';
+import postRoutes from './routes/posts';
+import commentRoutes from './routes/comments';
+
+const app = express();
+app.use(bodyParser.json());
+
+connectDB();
+
+app.use('/users', userRoutes);
+app.use('/posts', postRoutes);
+app.use('/comments', commentRoutes);
 
 const PORT = process.env.PORT || 5050;
-const app = express();
-
-app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("Welcome to the API.");
-});
-
-// Global error handling
-app.use((err, _req, res, next) => {
-  res.status(500).send("Seems like we messed up somewhere...");
-});
-
-// Start the Express server
 app.listen(PORT, () => {
-  console.log(`Server is running on port: ${PORT}`);
+  console.log(`Serveris running on port ${PORT}`);
 });
