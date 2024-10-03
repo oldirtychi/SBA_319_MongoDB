@@ -1,12 +1,14 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
 
+const { Schema } = mongoose;
 
-const commentSchema = new Schema({
+const CommentSchema = new Schema({
     content: { type: String, required: true },
     author: { type: Schema.Types.ObjectId, ref: 'User', required: true},
     post: { type: Schema.Types.ObjectId, ref: 'Post', required: true},
     postedOn: { type: Date, default: Date.now}
 });
+CommentSchema.index({ content: 'text' })
 
-module.exports = mongoose.model('Comment', commentSchema);
+const Comment = mongoose.model('Comment', CommentSchema);
+export default Comment;
